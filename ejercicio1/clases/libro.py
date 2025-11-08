@@ -7,4 +7,4 @@ class Libro:
         self.copias = copias
     
     def mostrar_estado(self):
-        print(f"| Titulo: {self.titulo} | Autor: {self.autor} | Copias: {self.copias} |")
+        return f"| Titulo: {self.titulo} | Autor: {self.autor} | Copias: {self.copias} |"

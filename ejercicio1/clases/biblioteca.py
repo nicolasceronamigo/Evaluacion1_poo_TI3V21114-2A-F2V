@@ -17,7 +17,7 @@ class Biblioteca:
     def mostrar_catalogo(self):
         print(f"| Catálogo biblioteca {self.nombre} |")
         for libro in self.catalogo:
-            libro.mostrar_estado()
+            print(libro.mostrar_estado())
     
     #Método para determinar si un libro existe, buscando por titulo
     def libro_existe(self, titulo: str) -> dict:
@@ -33,7 +33,7 @@ class Biblioteca:
         print(f"Resultado de búsqueda {titulo}:")
         #Si existe, imprime los datos del libro 
         if self.libro_existe(titulo)["existe"]:
-            self.libro_existe(titulo)["libro"].mostrar_estado()
+            print(self.libro_existe(titulo)["libro"].mostrar_estado())
         #Si no existe, imprime un mensaje que lo indica
         else:
             print(f"El libro {titulo} no existe en la biblioteca {self.nombre}")
@@ -46,7 +46,7 @@ class Biblioteca:
             if libro.copias > 0:
                 libro.copias -= 1
                 print("Préstamo realizado")
-                libro.mostrar_estado()
+                print(libro.mostrar_estado())
             #Si no quedan copias, se imprime un mensaje de error 
             else:
                 print("Error en préstamo:")
@@ -63,7 +63,7 @@ class Biblioteca:
             libro = self.libro_existe(titulo)["libro"]        
             libro.copias += 1
             print("Devolución realizada")
-            libro.mostrar_estado()
+            print(libro.mostrar_estado())
         #Si el libro no existe, se imprime un mensaje de error
         else:
             print("Error en devolución:")
