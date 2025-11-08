@@ -1,3 +1,5 @@
+#Se asume que copias es un número positivo
+
 class Libro:
     def __init__(self, titulo:str, autor:str, copias:int):
         self.titulo = titulo

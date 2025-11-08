@@ -20,7 +20,7 @@ biblioteca1.registrar_libro(libro4)
 biblioteca1.mostrar_catalogo()
 
 print("")
-print("-----------------------------------------------------------------")
+print("--------------------------------------------------------------------")
 print("")
 
 #Búsqueda de libros
@@ -33,7 +33,7 @@ print("")
 biblioteca1.buscar_libro("titulo_libro_6")
 
 print("")
-print("-----------------------------------------------------------------")
+print("--------------------------------------------------------------------")
 print("")
 
 #Préstamo de libros
@@ -48,7 +48,7 @@ print("")
 biblioteca1.prestar_libro("titulo_libro_5")
 
 print("")
-print("-----------------------------------------------------------------")
+print("--------------------------------------------------------------------")
 print("")
 
 #Devolución de libros
@@ -60,4 +60,4 @@ biblioteca1.devolver_libro("titulo_libro_3")
 print("")
 biblioteca1.devolver_libro("titulo_libro_5")
 print("")
-print("-----------------------------------------------------------------")
+print("--------------------------------------------------------------------")
