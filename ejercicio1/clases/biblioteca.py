@@ -6,9 +6,10 @@ class Biblioteca:
         self.catalogo: list[Libro] = []
     
     #Método para registrar libros
-    def registrar_libro(self, libro: Libro):
+    def registrar_libro(self, titulo: str, autor: str, copias: int):
+        libro = Libro(titulo, autor, copias)
         #Se asume que solo se puede registrar un libro si es que no existe en la biblioteca
-        if not self.libro_existe(libro.titulo)["existe"]:
+        if not self.libro_existe(libro.titulo):
             self.catalogo.append(libro)
         else:
             print(f"El libro {libro.titulo} ya existe en la bilbioteca {self.nombre}")
@@ -22,18 +23,18 @@ class Biblioteca:
     #Método para determinar si un libro existe, buscando por titulo
     def libro_existe(self, titulo: str) -> dict:
         for libro in self.catalogo:
-            #Si el libro existe, se retorna dentro de un diccionario junto con un True
+            #Si el libro existe, se retorna el libro
             if titulo == libro.titulo:
-                return {"libro": libro, "existe": True}
-        #Si el libro no existe, se retorna None dentro de un diccionario junto con un False
-        return {"libro": None, "existe": False}
+                return libro
+        #Si el libro no existe, se retorna None
+        return None
     
     #Método para buscar un libro por titulo
     def buscar_libro(self, titulo: str):
         print(f"Resultado de búsqueda {titulo}:")
         #Si existe, imprime los datos del libro 
-        if self.libro_existe(titulo)["existe"]:
-            print(self.libro_existe(titulo)["libro"].mostrar_estado())
+        if self.libro_existe(titulo):
+            print(self.libro_existe(titulo).mostrar_estado())
         #Si no existe, imprime un mensaje que lo indica
         else:
             print(f"El libro {titulo} no existe en la biblioteca {self.nombre}")
@@ -41,8 +42,8 @@ class Biblioteca:
     #Método para prestar una copia de un libro
     def prestar_libro(self, titulo: str):
         #Si el libro existe y quedan copias, se imprime el estado del libro actualizado
-        if self.libro_existe(titulo)["existe"]:
-            libro = self.libro_existe(titulo)["libro"]
+        if self.libro_existe(titulo):
+            libro = self.libro_existe(titulo)
             if libro.copias > 0:
                 libro.copias -= 1
                 print("Préstamo realizado")
@@ -59,8 +60,8 @@ class Biblioteca:
     #Método para devolver copia de un libro
     def devolver_libro(self, titulo: str):
         #Si el libro existe, se imprime el estado del libro actualizado
-        if self.libro_existe(titulo)["existe"]:
-            libro = self.libro_existe(titulo)["libro"]        
+        if self.libro_existe(titulo):
+            libro = self.libro_existe(titulo)        
             libro.copias += 1
             print("Devolución realizada")
             print(libro.mostrar_estado())
