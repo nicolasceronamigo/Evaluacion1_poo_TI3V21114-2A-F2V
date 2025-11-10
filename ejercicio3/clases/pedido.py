@@ -1,8 +1,7 @@
 from clases.item import Item
 
 class Pedido:
-    def __init__(self, numero: int):
-        self.numero = numero
+    def __init__(self):
         self.listado: list[Item] = []
     
     #Método para determinar si un item ya está registrado en el pedido
@@ -22,7 +21,7 @@ class Pedido:
     
     #Método para consultar listado de items
     def consultar_listado(self):
-        listado = f"Listado pedido {self.numero}\n"
+        listado = f"Listado pedido\n"
         for item in self.listado:
             listado += item.mostrar_datos() + "\n"
         return listado

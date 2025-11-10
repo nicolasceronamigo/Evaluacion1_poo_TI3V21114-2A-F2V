@@ -2,7 +2,7 @@ from clases.item import Item
 from clases .pedido import Pedido
 
 #Crear pedido
-pedido1 = Pedido(1)
+pedido1 = Pedido()
 
 #Consultar listado de items
 print(pedido1.consultar_listado())
