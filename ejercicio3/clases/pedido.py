@@ -17,15 +17,15 @@ class Pedido:
         item = Item(nombre, precio, cantidad)
         if not self.item_existe(item.nombre):
             self.listado.append(item)
-        else:
-            print("Error al agregar item")
-            print(f"El item {item.nombre} ya está agregado en el pedido {self.numero}")
+            return f"Item {nombre} agregado al pedido."
+        return f"Error al agregar item. El item {item.nombre} ya está agregado en el pedido."
     
     #Método para consultar listado de items
     def consultar_listado(self):
-        print(f"Listado pedido {self.numero}")
+        listado = f"Listado pedido {self.numero}\n"
         for item in self.listado:
-            print(item.mostrar_datos())
+            listado += item.mostrar_datos() + "\n"
+        return listado
     
     #Método para calcular el total del pedido
     def calcular_total(self):
@@ -36,5 +36,4 @@ class Pedido:
     
     #Método para ver detalle y total final a pagar
     def mostrar_total(self):
-        self.consultar_listado()
-        print(f"| Total a pagar ${self.calcular_total()}")
+        return self.consultar_listado() + f"| Total a pagar ${self.calcular_total()}"

@@ -5,33 +5,25 @@ from clases .pedido import Pedido
 pedido1 = Pedido(1)
 
 #Consultar listado de items
-pedido1.consultar_listado()
+print(pedido1.consultar_listado())
 
-print("")
-print("--------------------------------------------------------------------")
-print("")
+print("\n--------------------------------------------------------------------\n")
 
 #Agregar items
-pedido1.agregar_item("nombre_item_1", 1000, 1)
-pedido1.agregar_item("nombre_item_2", 2000, 2)
-pedido1.agregar_item("nombre_item_3", 3000, 3)
-pedido1.agregar_item("nombre_item_4", 4000, 4)
-pedido1.agregar_item("nombre_item_4", 4000, 1)
+print(pedido1.agregar_item("nombre_item_1", 1000, 1))
+print(pedido1.agregar_item("nombre_item_2", 2000, 2))
+print(pedido1.agregar_item("nombre_item_3", 3000, 3))
+print(pedido1.agregar_item("nombre_item_4", 4000, 4))
+print(pedido1.agregar_item("nombre_item_4", 4000, 1))
 
-print("")
-print("--------------------------------------------------------------------")
-print("")
+print("\n--------------------------------------------------------------------\n")
 
 #Consultar listado de items
-pedido1.consultar_listado()
+print(pedido1.consultar_listado())
 
-print("")
-print("--------------------------------------------------------------------")
-print("")
+print("\n--------------------------------------------------------------------\n")
 
 #Mostrar total final a pagar
-pedido1.mostrar_total()
+print(pedido1.mostrar_total())
 
-print("")
-print("--------------------------------------------------------------------")
-print("")
+print("\n--------------------------------------------------------------------\n")
