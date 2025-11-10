@@ -17,17 +17,15 @@ class Curso:
         alumno = Alumno(nombre)
         if not self.alumno_existe(alumno.nombre):
             self.lista_alumnos.append(alumno)
-        else:
-            print("Error en el registro")
-            print(f"El alumno {alumno.nombre} ya está registrado en el curso {self.nombre}")
+            return f"Alumno {nombre} agragado al curso {self.nombre}"
+        return f"Error en el registro. El alumno {alumno.nombre} ya está registrado en el curso {self.nombre}"
     
     #Método para remover un alumno
     def remover_alumno(self, nombre):
         if self.alumno_existe(nombre):
             self.lista_alumnos.remove(self.alumno_existe(nombre))
-        else:
-            print("Error al remover")
-            print(f"El alumno {nombre} no está registrado en el curso {self.nombre}")
+            return f"Alumno {nombre} removido del curso {self.nombre}"
+        return f"Error al remover. El alumno {nombre} no está registrado en el curso {self.nombre}"
     
     #Método para mostrar el estado del curso
     def mostrar_estado(self):
