@@ -6,5 +6,6 @@ class Libro:
         self.autor = autor
         self.copias = copias
     
+    #Método para mostrar estado del libro
     def mostrar_estado(self):
         return f"| Titulo: {self.titulo} | Autor: {self.autor} | Copias: {self.copias} |"
